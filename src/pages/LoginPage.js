@@ -23,8 +23,8 @@ const LoginPage = () => {
   const [isDirty, setIsDirty] = useState(false);
   const [errors, setErrors] = useState({ ok: true });
   const [state, hOnChange] = useForm({
-    email: 'cris@cris.com',
-    password: 'vhnq2tsx',
+    email: '',
+    password: '',
   });
 
   useEffect(() => {
@@ -43,14 +43,12 @@ const LoginPage = () => {
     setIsDirty(true);
     if (validation.ok)
       return dispatch(authentication(state, 'login', setErrors));
-
-    console.log(validation);
   };
 
   return (
     <Container>
       <Form onSubmit={hOnSubmit}>
-        <Headline>Login</Headline>
+        <Headline login>Iniciar sesión</Headline>
         <InputsWrapper>
           <InputText
             name="email"
@@ -58,15 +56,17 @@ const LoginPage = () => {
             state={state}
             errors={errors}
             hOnChange={hOnChange}
+            placeholder="Correo"
           />
           <InputPass
             name="password"
             state={state}
             errors={errors}
             hOnChange={hOnChange}
+            placeholder="Contraseña"
           />
         </InputsWrapper>
-        <AuthButton type="submit" disabled={fieldTrim(state, 'login')}>
+        <AuthButton login type="submit" disabled={fieldTrim(state, 'login')}>
           <FaArrowRight />
         </AuthButton>
         <LinkItems>

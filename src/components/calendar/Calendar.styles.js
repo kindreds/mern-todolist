@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   position: ${({ main }) => (!main ? 'fixed' : '')};
   right: 15px;
-  bottom: ${({ isOpen }) => (isOpen ? '80px' : '100%')};
+  bottom: ${({ isOpen }) => (isOpen ? '80px' : '-100%')};
   opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
   z-index: 5;
   width: ${({ main }) => (main ? '100%' : '345px')};
@@ -12,7 +12,7 @@ export const Container = styled.div`
 
   padding: 10px;
 
-  transition: all 0.3s linear;
+  transition: all 0.5s ease-in;
 `;
 
 export const DateWrapper = styled.div`

@@ -23,7 +23,7 @@ const InputPass = ({ name, hOnChange, state, errors }) => {
         error={errors[name]?.msg}
       />
       <Placeholer>
-        {name === 'password' ? 'Password' : 'Confirm Password'}
+        {name === 'password' ? 'Contraseña' : 'Confirme Contraseña'}
       </Placeholer>
       {showPass ? (
         <ShowPassword onClick={() => setShowPass(!showPass)} />

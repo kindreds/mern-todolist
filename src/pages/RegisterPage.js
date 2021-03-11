@@ -45,14 +45,12 @@ const RegisterPage = () => {
     setIsDirty(true);
     if (validation.ok)
       return dispatch(authentication(state, 'register', setErrors));
-
-    console.log(validation);
   };
 
   return (
     <Container>
       <Form onSubmit={hOnSubmit}>
-        <Headline>Register</Headline>
+        <Headline>Registro</Headline>
         <InputsWrapper>
           <InputText
             name="name"
@@ -60,6 +58,7 @@ const RegisterPage = () => {
             state={state}
             errors={errors}
             hOnChange={hOnChange}
+            placeholder="Nombre"
           />
           <InputText
             name="email"
@@ -67,6 +66,7 @@ const RegisterPage = () => {
             state={state}
             errors={errors}
             hOnChange={hOnChange}
+            placeholder="Correo"
           />
           <InputPass
             name="password"

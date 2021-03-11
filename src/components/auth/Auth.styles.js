@@ -15,11 +15,12 @@ export const Form = styled.form`
   background: ${DARK};
   width: calc(100% - 2rem);
   max-width: 400px;
+  max-height: 600px;
   border-radius: 2rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 
   animation: fade 0.5s linear;
 
@@ -35,9 +36,9 @@ export const Headline = styled.h1`
   color: ${LIGHT};
   font-size: 40px;
   text-align: center;
-  margin-bottom: 50px;
   text-transform: uppercase;
   user-select: none;
+  margin-top: ${({ login }) => (login ? '' : '1rem')};
 
   @media screen and (max-width: 360px) {
     font-size: 35px;
@@ -55,10 +56,10 @@ export const InputItem = styled.div`
 export const Input = styled.input`
   border: 0;
   width: 100%;
-  height: 60px;
+  height: 55px;
   box-shadow: none;
   color: #fff;
-  line-height: 60px;
+  line-height: 55px;
   border-radius: 5px;
   box-sizing: border-box;
   letter-spacing: 2px;
@@ -74,6 +75,8 @@ export const Input = styled.input`
     }};
 
   ${({ valid }) => (valid ? `& + label {top: -14px; left: 6px;}` : '')}
+
+  transition: 300ms ease-in-out;
 
   &:focus {
     outline: 0;
@@ -104,7 +107,7 @@ export const Placeholer = styled.label`
 
 export const ShowPassword = styled(BsEyeFill)`
   position: absolute;
-  top: 22px;
+  top: 17px;
   right: 10px;
   font-size: 22px;
   color: ${DARKGRAY};
@@ -119,7 +122,7 @@ export const ShowPassword = styled(BsEyeFill)`
 
 export const HidePassword = styled(BsEyeSlashFill)`
   position: absolute;
-  top: 22px;
+  top: 17px;
   right: 10px;
   font-size: 22px;
   color: ${DARKGRAY};
@@ -127,7 +130,7 @@ export const HidePassword = styled(BsEyeSlashFill)`
   transition: 0.2s ease;
 
   &:hover {
-    color: #111;
+    color: #fff;
     cursor: pointer;
   }
 `;
@@ -148,7 +151,6 @@ export const LinkItems = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
 `;
 
 export const AuthLink = styled(Link)`

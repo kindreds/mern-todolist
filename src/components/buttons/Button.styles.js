@@ -12,7 +12,8 @@ export const AuthButton = styled.button`
   padding: 0 30px;
   cursor: pointer;
   border-radius: 30px;
-  margin-bottom: 40px;
+  margin-bottom: ${({ login }) => (login ? '40px' : '20px')};
+  margin-top: ${({ login }) => (login ? '10px' : '-10px')};
   white-space: nowrap;
   border: 0;
   background: ${RED};

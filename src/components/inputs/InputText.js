@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Input, InputItem, Placeholer, FrontError } from '../auth/Auth.styles';
 
-const InputText = ({ name, type, hOnChange, state, errors }) => {
+const InputText = ({ name, type, hOnChange, state, errors, placeholder }) => {
   return (
     <InputItem>
       <Input
@@ -15,7 +15,7 @@ const InputText = ({ name, type, hOnChange, state, errors }) => {
         valid={state[name].trim() !== ''}
         autoComplete="off"
       />
-      <Placeholer>{name}</Placeholer>
+      <Placeholer>{placeholder}</Placeholer>
       <FrontError>{errors[name] && errors[name]?.msg}</FrontError>
     </InputItem>
   );
@@ -27,6 +27,7 @@ InputText.propTypes = {
   state: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
   hOnChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
 };
 
 export default InputText;
