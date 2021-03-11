@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { BLUE } from '../../styles/colors';
 
 export const DayNumber = styled.div`
   display: flex;
@@ -23,7 +22,8 @@ export const DayNumber = styled.div`
   }
 
   & p {
-    font-size: 25px;
+    font-size: 20px;
+    letter-spacing: 2px;
     color: #fff;
 
     @media screen and (max-width: 360px) {
@@ -38,7 +38,7 @@ export const DayNumber = styled.div`
 
 export const Dot = styled.small`
   position: absolute;
-  bottom: 0px;
-  right: 0px;
-  color: ${BLUE};
+  bottom: -3px;
+  right: -1px;
+  color: green;
 `;

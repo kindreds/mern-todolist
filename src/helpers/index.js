@@ -1,7 +1,7 @@
 export const createCalendar = (
   actualYear,
   actualMonth,
-  locale = 'en',
+  locale = 'es-ES',
   { month, weekday } = { month: 'long', weekday: 'short' }
 ) => {
   const months = [...Array(12).keys()];

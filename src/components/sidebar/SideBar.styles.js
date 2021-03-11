@@ -16,12 +16,6 @@ export const SideContainer = styled.aside`
     opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
     z-index: 3;
   }
-
-  @media screen and (min-width: 768px) {
-    ${({ mobile }) => {
-      if (mobile) return 'display: none;';
-    }}
-  }
 `;
 
 export const SideWrapper = styled.section`
@@ -140,9 +134,9 @@ export const SideItems = styled.div`
     content: '';
     display: block;
     margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 70%;
+    margin-block: 10px;
+    margin-inline: 2rem;
+    width: auto;
     height: 1px;
     background: ${DARKGRAY};
   }
@@ -159,9 +153,10 @@ export const SideLink = styled(Link)`
   text-decoration: none;
   margin-bottom: 2px;
   background: ${({ active }) => (active ? '#323232' : 'transparent')};
+  transition: 300ms ease-in;
 
-  ${({ activo }) =>
-    activo
+  ${({ active }) =>
+    active
       ? `
   &::before {
     content: '';
@@ -196,5 +191,4 @@ export const Title = styled.p`
 export const BtnLogout = styled.div`
   display: flex;
   justify-content: center;
-  margin-right: 15px;
 `;

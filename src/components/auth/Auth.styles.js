@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
-import { DARK, GRAY, LIGHT, RED, DARKGRAY } from '../../styles/colors';
+import { DARK, LIGHT, RED, DARKGRAY, GREEN, BLUE } from '../../styles/colors';
 
 export const Container = styled.main`
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${DARK};
+  background-image: linear-gradient(to right top, ${GREEN}, ${BLUE});
 `;
 
 export const Form = styled.form`
-  background: ${LIGHT};
+  background: ${DARK};
   width: calc(100% - 2rem);
   max-width: 400px;
   border-radius: 2rem;
@@ -32,7 +32,7 @@ export const Form = styled.form`
 `;
 
 export const Headline = styled.h1`
-  color: ${DARK};
+  color: ${LIGHT};
   font-size: 40px;
   text-align: center;
   margin-bottom: 50px;
@@ -57,18 +57,19 @@ export const Input = styled.input`
   width: 100%;
   height: 60px;
   box-shadow: none;
-  color: #111;
+  color: #fff;
   line-height: 60px;
   border-radius: 5px;
   box-sizing: border-box;
+  letter-spacing: 2px;
   padding: 16px 0 0 13px;
-  background: ${({ valid }) => (valid ? LIGHT : GRAY)};
+  background: ${({ valid }) => (valid ? 'transparent' : '#323232')};
   border: 1px solid
     ${({ valid, error }) => {
       if (error) {
         return RED;
       } else {
-        return valid ? DARKGRAY : LIGHT;
+        return valid ? '#404040' : '#323232';
       }
     }};
 
@@ -76,8 +77,8 @@ export const Input = styled.input`
 
   &:focus {
     outline: 0;
-    background: ${LIGHT};
-    border: 1px solid ${({ error }) => (error ? '#bc252a' : DARK)};
+    background: transparent;
+    border: 1px solid ${({ error }) => (error ? '#bc252a' : DARKGRAY)};
   }
 
   &:focus + label {
@@ -111,7 +112,7 @@ export const ShowPassword = styled(BsEyeFill)`
   transition: 0.2s ease;
 
   &:hover {
-    color: #111;
+    color: #fff;
     cursor: pointer;
   }
 `;

@@ -43,6 +43,7 @@ export const LabelText = styled.label`
   position: absolute;
   top: 20px;
   left: 15px;
+  color: #9d9d9d;
 `;
 
 export const BtnSearch = styled.button`

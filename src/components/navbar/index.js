@@ -7,6 +7,21 @@ import { useLocation } from 'react-router-dom';
 const Navbar = ({ setIsOpen }) => {
   const location = useLocation();
   const header = location.pathname.slice(6);
+
+  const headerTranslate = () => {
+    switch (header) {
+      case 'today':
+        return 'Mi Dia';
+      case 'calendar':
+        return 'Calendario';
+      case 'assigned':
+        return 'Asignadas';
+
+      default:
+        return 'Inicio';
+    }
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -14,7 +29,7 @@ const Navbar = ({ setIsOpen }) => {
           <Bars onClick={() => setIsOpen(true)} />
         </NavbarItem>
         <NavbarItem>
-          <Logo>{header.length === 0 ? 'Home' : header}</Logo>
+          <Logo>{headerTranslate()}</Logo>
         </NavbarItem>
       </Wrapper>
     </Container>

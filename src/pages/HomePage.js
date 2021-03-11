@@ -7,6 +7,7 @@ import Events from '../components/events';
 import Search from '../components/search';
 
 import styled from 'styled-components';
+import FormEvent from '../components/events/FormEvent';
 
 const HomeContainer = styled.div`
   display: grid;
@@ -15,7 +16,7 @@ const HomeContainer = styled.div`
   overflow-y: hidden;
 `;
 const EventsContainer = styled.div`
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 moment.locale('es-mx');
@@ -53,12 +54,15 @@ const TodayPage = () => {
   });
 
   return (
-    <HomeContainer>
-      <Search search={search} setSearch={setSearch} />
-      <EventsContainer>
-        <Events events={eventsFilter} />
-      </EventsContainer>
-    </HomeContainer>
+    <>
+      <HomeContainer>
+        <Search search={search} setSearch={setSearch} />
+        <EventsContainer>
+          <Events events={eventsFilter} />
+        </EventsContainer>
+      </HomeContainer>
+      <FormEvent />
+    </>
   );
 };
 

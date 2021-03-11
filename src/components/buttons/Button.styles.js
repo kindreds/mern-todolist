@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { DARKGRAY, LIGHT, RED } from '../../styles/colors';
+import { DARKGRAY, GRAY, LIGHT, RED } from '../../styles/colors';
 
 export const AuthButton = styled.button`
   outline: 0;
@@ -27,7 +27,7 @@ export const AuthButton = styled.button`
   &:disabled {
     background: transparent;
     color: ${DARKGRAY};
-    border: 1px solid ${DARKGRAY};
+    border: 1px solid ${GRAY};
   }
 
   @media screen and (max-width: 360px) {
@@ -46,7 +46,7 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   white-space: nowrap;
-  border-radius: 50px;
+  border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;

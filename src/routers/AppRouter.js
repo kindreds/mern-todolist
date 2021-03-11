@@ -4,7 +4,6 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Loading from '../components/loading';
 import Sidebar from '../components/sidebar';
-import FormEvent from '../components/events/FormEvent';
 import { AppContainer, AppWrapper } from '../components/app/App.styles';
 // Pages
 const Home = lazy(() => import('../pages/HomePage'));
@@ -29,7 +28,6 @@ const AppRouter = () => {
 
             <Redirect to="/home" />
           </Switch>
-          <FormEvent />
         </AppWrapper>
       </AppContainer>
     </Suspense>

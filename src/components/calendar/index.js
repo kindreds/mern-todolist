@@ -81,10 +81,10 @@ const Calendar = ({
       {!main && (
         <BtnWrapper>
           <CancelBtn type="button" onClick={() => hIsOpen(true)}>
-            Cancel
+            Cancelar
           </CancelBtn>
           <SaveBtn type="button" onClick={() => hIsOpen(false)}>
-            Save
+            Guardar
           </SaveBtn>
         </BtnWrapper>
       )}

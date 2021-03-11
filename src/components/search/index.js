@@ -22,7 +22,7 @@ const Search = ({ search, setSearch }) => {
         valid={search.trim() !== ''}
         onChange={({ target }) => setSearch(target.value)}
       />
-      <LabelText>What you looking for...</LabelText>
+      <LabelText>¿ Que estas buscando ?...</LabelText>
       <BtnSearch type="submit">
         <VscSearch />
       </BtnSearch>

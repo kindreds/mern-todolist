@@ -5,7 +5,7 @@ import { SideIcon, SideLink, Title } from './SideBar.styles';
 const SideItem = ({ pathname, Icon, title, path, color }) => {
   const validPath = () => (pathname === path ? 1 : 0);
   return (
-    <SideLink activo={validPath()} to={path}>
+    <SideLink active={validPath()} to={path}>
       <SideIcon color={color}>
         <Icon />
       </SideIcon>

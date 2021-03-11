@@ -4,9 +4,7 @@ import { FaCheck } from 'react-icons/fa';
 import { DARK, DARKGRAY, LIGHT, YELLOW } from '../../styles/colors';
 
 export const EventsWrapper = styled.div`
-  display: block;
-  margin: 0 auto;
-  width: 99%;
+  width: auto;
   height: 100%;
   box-sizing: border-box;
 
@@ -26,6 +24,7 @@ export const EventItem = styled.div`
   margin-bottom: 5px;
 
   animation: fade 0.5s linear;
+  margin-inline: 5px;
 `;
 
 export const CheckBox = styled.div`
@@ -145,6 +144,7 @@ export const LabelNewEvent = styled.label`
   position: absolute;
   top: 20px;
   left: 50px;
+  color: #9d9d9d;
 `;
 
 export const BtnNewEvent = styled.button`

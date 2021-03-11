@@ -4,6 +4,7 @@ import moment from 'moment';
 
 import Events from '../components/events';
 import styled from 'styled-components';
+import FormEvent from '../components/events/FormEvent';
 
 moment.locale('es-mx');
 
@@ -20,9 +21,12 @@ const TodayPage = () => {
   );
 
   return (
-    <TodayContainer>
-      <Events events={eventsFilter} />
-    </TodayContainer>
+    <>
+      <TodayContainer>
+        <Events events={eventsFilter} />
+      </TodayContainer>
+      <FormEvent />
+    </>
   );
 };
 

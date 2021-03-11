@@ -1,38 +1,36 @@
 import React from 'react';
 import Types from 'prop-types';
+import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { logoutAction } from '../../actions/auth';
 
+import { sidebarData } from './data';
+import { logoutAction } from '../../actions/auth';
+import { purgeEvents } from '../../actions/events';
 import {
-  CloseIcon,
-  SideWrapper,
-  SideContainer,
-  SideHeader,
   SideUser,
-  ItemWrapper,
-  SideUserLogo,
-  SideUserTitle,
+  CloseIcon,
   SideItems,
-  SideHeaderTitle,
-  SideHeaderClose,
   BtnLogout,
   SideSearch,
+  SideHeader,
+  ItemWrapper,
+  SideWrapper,
+  SideUserLogo,
+  SideContainer,
+  SideUserTitle,
+  SideHeaderTitle,
+  SideHeaderClose,
 } from './SideBar.styles';
-import { Button } from '../buttons/Button.styles';
-import { purgeEvents } from '../../actions/events';
-import { useLocation } from 'react-router-dom';
-import { sidebarData } from './data';
 import SideItem from './SideItem';
 import { VscSearch } from 'react-icons/vsc';
+import { Button } from '../buttons/Button.styles';
 
-const Sidebar = ({ mobile = false, isOpen, setIsOpen }) => {
+const Sidebar = ({ isOpen, setIsOpen }) => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   const { user } = useSelector((state) => state.auth);
 
-  const close = () => {
-    setIsOpen(!isOpen);
-  };
+  const close = () => setIsOpen(!isOpen);
 
   const hLogout = () => {
     dispatch(purgeEvents());
@@ -40,7 +38,7 @@ const Sidebar = ({ mobile = false, isOpen, setIsOpen }) => {
   };
 
   return (
-    <SideContainer mobile={mobile} isOpen={isOpen}>
+    <SideContainer isOpen={isOpen}>
       <SideWrapper>
         <SideHeader>
           <SideHeaderTitle>
@@ -72,7 +70,7 @@ const Sidebar = ({ mobile = false, isOpen, setIsOpen }) => {
         </SideItems>
         <BtnLogout>
           <Button type="button" onClick={hLogout} big>
-            logout
+            Cerrar sesión
           </Button>
         </BtnLogout>
       </SideWrapper>
@@ -83,7 +81,6 @@ const Sidebar = ({ mobile = false, isOpen, setIsOpen }) => {
 Sidebar.propTypes = {
   isOpen: Types.bool,
   setIsOpen: Types.func,
-  mobile: Types.bool,
 };
 
 export default Sidebar;

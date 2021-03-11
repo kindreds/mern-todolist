@@ -55,7 +55,7 @@ const FormEvent = ({ important = false }) => {
         valid={title.trim() !== ''}
         onChange={({ target }) => setTitle(target.value)}
       />
-      <LabelNewEvent>Add event</LabelNewEvent>
+      <LabelNewEvent>Agregar Evento</LabelNewEvent>
       <DateNewEvent disabled={title.trim() === ''} onClick={hIsOpen}>
         <BsCalendar />
       </DateNewEvent>
